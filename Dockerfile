@@ -11,6 +11,7 @@ COPY ./nginx.key /tmp/nginx.key
 
 RUN chown root:root /etc/nginx/conf.d/default.nginx
 RUN ls -l /etc/nginx/conf.d/
+RUN cat /etc/nginx/conf.d/default.nginx
 
 
 EXPOSE 8081 8083
