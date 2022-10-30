@@ -9,11 +9,11 @@ COPY ./default.conf /etc/nginx/conf.d/default.nginx
 COPY ./nginx.crt /tmp/nginx.crt
 COPY ./nginx.key /tmp/nginx.key
 
-RUN chown root:root /etc/nginx/conf.d/default.nginx
+#RUN chown root:root /etc/nginx/conf.d/default.nginx
 RUN ls -l /etc/nginx/conf.d/
 RUN cat /etc/nginx/conf.d/default.nginx
 
 
 EXPOSE 8081 8083
 # comment user directive as master process is run as user in OpenShift anyhow
-#RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
+RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
